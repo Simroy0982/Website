@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CosmoQuest VR</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <h1 class="main-title">
+    <span class="cosmo">CosmoQuest</span><br />
+    <span class="vr">VR</span>
+  </h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about" class="btn-about">About</a></li>
+    <li><a href="#features" class="btn-features">Features</a></li>
+    <li><a href="#preview" class="btn-preview">Game Preview</a></li>
+    <li><a href="#preorder" class="btn-preorder">Pre-order</a></li>
+  </ul>
+</nav>
+
+<section id="about">
+  <h2>About</h2>
+  <p>Cosmo Quest VR is an immersive game where you can explore the solar system, interact with planets, and learn about space in a fun and interactive way.</p>
+</section>
+
+<section id="features">
+  <h2>Features</h2>
+  <ul>
+    <li>Explore the entire solar system in stunning VR</li>
+    <li>Interactive learning with real-time planet manipulation</li>
+    <li>Realistic sound and visual effects</li>
+    <li>Quests and challenges to test your space knowledge, and gain exclusive titles</li>
+  </ul>
+</section>
+
+<section id="preview">
+  <h2>Game Preview</h2>
+  <p>Check out some in-game screenshots:</p>
+
+  <div class="slideshow-container">
+
+    <!-- Slides -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 9</div>
+      <img src="Images/GP1.png" alt="Slide 1">
+      <div class="text">Explore the Solar system yourself!</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 9</div>
+      <img src="Images/GP2.png" alt="Slide 2">
+      <div class="text">Two modes!</div>
+    </div>
+    <!-- Remaining slides omitted for brevity (keep as-is) -->
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <br />
+  <div class="dots-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <!-- Add remaining dots -->
+  </div>
+</section>
+
+<section id="preorder">
+  <h2>Pre-order</h2>
+  <p>Excited to start your space journey? <a href="https://example.com/preorder" target="_blank">Pre-order Cosmo Quest VR now</a> — learning about the solar system couldn't be more fun!</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Cosmo Quest VR. All rights reserved.</p>
+</footer>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  if (dots[slideIndex-1]) {
+    dots[slideIndex-1].className += " active";
+  }
+}
+
+function toggleMenu() {
+  document.querySelector("nav ul").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

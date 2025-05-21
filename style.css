@@ -1,0 +1,207 @@
+body {
+  font-family: Calibri, sans-serif;
+  background-image: url('Images/BG.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  color: white;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.main-title .cosmo {
+  font-family: 'Unica One', sans-serif;
+  font-size: clamp(2rem, 6vw, 60px);
+  color: #aef3ff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #00e5ff;
+}
+
+.main-title .vr {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(3rem, 8vw, 90px);
+  color: #00ccff;
+  text-shadow: 0 0 5px #ff00ff, 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff, 0 0 30px #00ffff;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  color: #000;
+}
+
+h2 {
+  color: #00bfff;
+  border-bottom: 2px solid #00bfff;
+  padding-bottom: 5px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  display: block;
+  margin: 10px auto;
+}
+
+footer {
+  text-align: center;
+  background-color: #1a1a40;
+  padding: 20px;
+  color: #cccccc;
+  margin-top: 40px;
+}
+
+/* Slideshow */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+.mySlides {
+  display: none;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+}
+.next {
+  right: 0;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.text, .numbertext {
+  color: #f2f2f2;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  text-align: center;
+}
+.text {
+  bottom: 8px;
+  width: 100%;
+}
+.numbertext {
+  top: 0;
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+.dots-container {
+  text-align: center;
+}
+
+/* Section colors */
+#about h2 { color: #1a1a1a; border-color: #1a1a1a; }
+#features h2 { color: #8e44ad; border-color: #8e44ad; }
+#preview { background-color: rgba(175, 46, 189, 0.8); color: #000; }
+#preview h2 { color: #fff; border-color: #fff; }
+#preorder { background-color: rgba(127, 171, 178, 0.8); }
+#preorder h2 { color: #003366; border-color: #003366; }
+
+/* Buttons */
+.btn-about { background-color: #2db99d; }
+.btn-about:hover { background-color: #16a085; }
+
+.btn-features { background-color: #e67e22; }
+.btn-features:hover { background-color: #d35400; }
+
+.btn-preview { background-color: #9b59b6; }
+.btn-preview:hover { background-color: #8e44ad; }
+
+.btn-preorder { background-color: #3498db; }
+.btn-preorder:hover { background-color: #2980b9; }
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .main-title .cosmo, .main-title .vr {
+    text-align: center;
+  }
+  .prev, .next {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
